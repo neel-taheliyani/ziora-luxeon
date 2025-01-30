@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziora Luxeon - Luxury Watch Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #D8D8D8;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        header .logo {
+            font-size: 2em;
+            font-family: 'Lora', serif;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-right: 50px;
+        }
+
+        header .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+        }
+
+        header .navbar-nav li a {
+            font-size: 1em;
+            color: #D8D8D8;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        header .navbar-nav li a:hover {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        header .navbar-nav li a.active {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s ease-out forwards 0.5s;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-family: 'Lora', serif;
+            color: #D4AF37;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            padding: 12px 30px;
+            background: #1a1a1a;
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        .products-section {
+            padding: 60px 20px;
+            background-color: #333;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s ease-out forwards 1s;
+        }
+
+        .products-section h2 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 40px;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .carousel-item h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #D4AF37;
+        }
+
+        .carousel-item p {
+            font-size: 1.1em;
+            color: #f1f1f1;
+        }
+
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 2em;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            background: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #D4AF37;
+            font-size: 1.5em; 
+            text-align: center;
+            padding: 20px 0;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s ease-out forwards 1.5s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Ziora Luxeon</div>
+        <ul class="navbar-nav">
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./login13.html">Login</a></li>
+            <li><a href="./product13.html">Products</a></li>
+            <li><a href="./cart13.html">Cart</a></li>
+            <li><a href="./contect13.html">Contact</a></li>
+            <li><a href="./about13.html">About Us</a></li>
+        </ul>
+    </header>
+    <section class="hero" id="home">
+        <h1>Don't Dream, Wear It</h1>
+        <p>Defining Luxury, Defining You</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+    <section class="products-section" id="products">
+        <h2>Deal of the Day</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="images/shreeram.png" alt="Shree Ram Janmbhumi Edition">
+                    <h3>Shree Ram Janmbhumi Edition</h3>
+                    <p>Price: ₹34,00,000</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/patekphilliphoragnedial.png" alt="Patek Philippe Aquanaut">
+                    <h3>Patek Philippe Aquanaut</h3>
+                    <p>Price: ₹50,00,000</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/tommyhilfiger.png" alt="Tommy Hilfiger">
+                    <h3>Tommy Hilfiger</h3>
+                    <p>Price: ₹11,00,000</p>
+                </div>
+            </div>
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Ziora Luxeon. All rights reserved.</p>
+    </footer>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const totalItems = document.querySelectorAll('.carousel-item').length;
+            const itemWidth = document.querySelector('.carousel-item').offsetWidth;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            
+            if (currentIndex >= totalItems) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalItems - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>

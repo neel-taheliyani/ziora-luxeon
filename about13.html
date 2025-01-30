@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ziora Luxeon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000000;
+            color: #D8D8D8;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        header .logo {
+            font-size: 2.5em;
+            font-family: 'Lora', serif;
+            color: #D4AF37;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s ease-in-out;
+            margin-right: 50px;
+        }
+
+        header .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            justify-content: flex-start;
+        }
+
+        header .navbar-nav li a {
+            font-size: 1.1em;
+            color: #D8D8D8;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        header .navbar-nav li a:hover {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            transform: scale(1.05);
+        }
+
+        header .navbar-nav li a.active {
+            background-color: #D4AF37;
+            color: #1a1a1a;
+        }
+
+        .hero {
+            background-color: #1a1a1a;
+            padding: 100px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-family: 'Lora', serif;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #D8D8D8;
+            animation: fadeInUp 2.5s ease-out forwards;
+        }
+
+        .about-section {
+            padding: 80px 20px;
+            background-color: #333333;
+            color: #D8D8D8;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        .about-section h2 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 20px auto;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #D4AF37;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            font-size: 1.5em;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #D8D8D8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Ziora Luxeon</div>
+        <ul class="navbar-nav">
+        <li><a href="./index.html">Home</a></li>
+            <li><a href="./login13.html">Login</a></li>
+            <li><a href="./product13.html">Products</a></li>
+            <li><a href="./cart13.html">Cart</a></li>
+            <li><a href="./contect13.html">Contact</a></li>
+            <li><a href="./about13.html" class="active">About Us</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <h1>About Ziora Luxeon</h1>
+        <p>Our passion drives our craftsmanship, creating timeless luxury pieces for discerning individuals.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>Our Story</h2>
+        <p>
+            At Ziora Luxeon, we believe that every watch is more than a timepiece; it is a story of craftsmanship, tradition, and luxury. With years of expertise in design and a commitment to quality, we have curated a collection that combines elegance, precision, and exclusivity.
+        </p>
+        <p>
+            From the hands of our skilled artisans to your wrist, each Ziora Luxeon watch represents a perfect blend of artistry and functionality. Discover the essence of timeless sophistication with us.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ziora Luxeon. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
